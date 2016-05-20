@@ -1,0 +1,39 @@
+extends layout
+block content
+	include ./includes/navigation.jade
+	+navi('首页')
+	section.main
+		div.master-body
+			- var tTitle = (result.tTitle?result.tTitle:'No content')
+			- var tAuthor = (result.tAuthor?result.tAuthor:'No content')
+			- var tTime = (result.tTime?result.tTime:'No content')
+			//- - var tCoverPic = result.tCoverPic?result.tCoverPic:'No content'
+			- var tContent = (result.tContent?result.tContent:'No content')
+			- var oTitle = (result.oTitle?result.oTitle:'No content')
+			- var oAuthor = (result.oAuthor?result.oAuthor:'No content')
+			- var oTime = (result.oTime?result.oTime:'No content')
+			//- - var oCoverPic = result.oCoverPic?result.oCoverPic:'No content' 
+			- var oContent = (result.oContent?result.oContent:'No content')
+				div.main-inside
+					article.main-article
+						h1.main-title  #{tTitle}
+						h3.subtitle author:#{tAuthor} #{tTime.toLocaleDateString()}
+						p.main-paragraph!= mrked(tContent)
+							
+								
+
+				div.main-inside
+					article.main-article
+						h1.main-title #{oTitle}
+						h3.subtitle author:#{oAuthor} #{oTime.toLocaleDateString()}
+						p.main-paragraph!= mrked(oContent)
+							
+
+		aside.aside-area
+			div.aside-inside aside area mabe dor ads
+			
+	script(src='javascripts/jquery.min.js' type='text/javascript')
+	script(src='javascripts/typescript.min.js' type='text/javascript')
+	script
+		:typescript
+			exec.article();

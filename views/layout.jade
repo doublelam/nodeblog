@@ -1,0 +1,40 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		meta(name="keywords" content="")
+		meta(name="description" content="")
+		meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1.5, user-scalable=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		meta(name="renderer" content="webkit")
+		link(rel="icon" type="image/png" href="images/favicon.ng")
+		//- 设置主屏幕信息 for 安卓 Chrome  39 内核 --
+		meta(name="mobile-web-app-capable" content="yes")
+		meta(name="application-name" content="App Name")
+		link(rel="icon" sizes="192x192" href="images/touch/touchicon.png")
+		//- 删除苹果默认的工具栏和菜单栏 --
+		meta(name="apple-mobile-web-app-capable" content="yes")
+		//- 设置苹果工具栏颜色 --
+		meta(name="apple-mobile-web-app-status-bar-style" ontent="white")
+		//- 设置苹果工具栏标题 --
+		meta(name="apple-mobile-web-app-title" content="App Name")
+		//- 忽略页面中的数字识别为电话，忽略Email识别 --
+		meta(name="format-detection" content="telphone=no, mail=no")
+		//- 设置苹果桌面图标 --
+		link(rel="apple-touch-icon" href="images/touch/touch-con.png")
+		//- UC浏览器强制竖屏 --
+		//- meta(name="screen-orientation" content="portrait")
+		//- QQ浏览器强制竖屏 --
+		//- meta(name="x5-orientation" content="portrait")   
+		//- UC浏览器强制全屏 --
+		//- meta( name="full-screen" content="yes")
+		//- QQ浏览器强制全屏 --
+		//- meta(name="x5-fullscreen" content="true")
+		//- UC浏览器应用模式 --
+		//- meta(name="browsermode" content="application")
+		//- QQ浏览器应用模式 --
+		//- meta(name="x5-page-mode" content="app")
+		title #{title}
+		link(rel='stylesheet', href='/stylesheets/app.min.css')
+	body
+		block content

@@ -1,0 +1,38 @@
+extends layout
+block content
+	include ./includes/navigation.jade
+	+navi('管理')
+	section.main
+		div.master-body
+			div.article-add
+				a.as-btn(href="/edit") 创建
+			ul.articles-preview
+				each val,index in result
+					li.article-display
+						div.article-content.manage-article-content(article_id="#{val._id}")
+							div.article-view
+								h2.article-title #{val.tTitle}
+								- var preVs = val.tContent.toString().substr(0,50)
+									p.article-paragraph 
+										|preview: #{preVs}...
+							div.manage-btns
+								a.as-btn.btn-edit(href="/edit?articleid=#{val._id}") 编辑
+								button.as-btn.btn-delete.btn-warn 删除
+		aside.aside-area
+			div.aside-inside aside area mabe dor ads
+				:marked
+					# markdown
+						for()
+							console.log()
+						sd
+					codeend
+	script(src="/javascripts/jquery.min.js" type="text/javascript")
+	script(src="/javascripts/typescript.min.js" type="text/javascript")
+	script
+		:typescript
+				exec.articleManage();
+				
+		
+			
+
+

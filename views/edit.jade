@@ -1,0 +1,48 @@
+extends layout
+block content
+	include ./includes/navigation.jade
+	+navi('编辑')
+	section.main
+		.original-article
+			.input-area
+				label.input-label.origin-title 
+					san.input-leb Title: 
+					input(type="text").hover-scale.edit-input
+				label.input-label.origin-author
+					span.input-leb Author: 
+					input(type="text").hover-scale.edit-input
+				label.input-label.origin-time
+					span.input-leb Time:
+					input(type="date").hover-scale.edit-input
+				label.input-label.origin-cover
+					span.input-leb CoverPic:
+					input(type="text").hover-scale.edit-input
+				label.input-label.origin-content
+					span.input-leb Content: 
+					textarea(type="text" placeholder="Edit it using Markdown format").hover-scale.edit-input
+		.tranlated-article
+			.input-area
+				label.input-label.trans-title 
+					san.input-leb 标题: 
+					input(type="text").hover-scale.edit-input
+				label.input-label.trans-author
+					span.input-leb 作者: 
+					input(type="text").hover-scale.edit-input
+				label.input-label.trans-time
+					span.input-leb 时间:
+					input(type="date").hover-scale.edit-input
+				label.input-label.trans-cover
+					span.input-leb 封面图: 
+					input(type="text").hover-scale.edit-input
+				label.input-label.trans-content
+					span.input-leb 内容: 
+					textarea(type="text" placeholder="请使用markdown格式编辑").hover-scale.edit-input
+		.button-block
+			button.as-btn(disabled updatefor="#{articleId}") 提交
+	script(src="/javascripts/jquery.min.js" type="text/javascript")
+	script(src="/javascripts/typescript.min.js" type="text/javascript")
+	script
+		:typescript
+			exec.edit();
+ 
+
